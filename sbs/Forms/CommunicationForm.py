@@ -21,17 +21,19 @@ class CommunicationForm(ModelForm):
 
         fields = (
             'phoneNumber', 'address', 'postalCode', 'phoneNumber2', 'country', 'city', 'phoneHome', 'phoneJop',
-            'addressHome', 'addressJop')
+            'addressHome', 'addressJop','recent')
         labels = {'phoneNumber': 'Cep Telefonu',
                   'phoneNumber2': 'Sabit Telefon',
                   'phoneHome': 'Ev Telefonu',
                   'phoneJop': 'İş Telefonu',
+                  'recent':'Öz Geçmiş',
                   'addressHome': 'Ev Adresi',
                   'addressJop': 'İş Adresi',
                   'postalCode': 'Posta Kodu',
                   'city': 'İl', }
         widgets = {
-
+            'recent':forms.Textarea(
+                attrs={'class':'form-control','rows':'6'}),
             'address': forms.Textarea(
                 attrs={'class': 'form-control ', 'rows': '2', "style": "text-transform:uppercase"}),
             'addressHome': forms.Textarea(

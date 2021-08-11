@@ -9,6 +9,7 @@ class Communication(models.Model):
     phoneHome = models.CharField(max_length=120, null=True, blank=True)
     phoneJop = models.CharField(max_length=120, null=True, blank=True)
     address = models.TextField(blank=True, null=True, verbose_name='Adres')
+    recent=models.TextField(max_length=5000,null=True,blank=True,verbose_name='Gecmis')
     addressHome = models.TextField(blank=True, null=True, verbose_name='AdresHome')
     addressJop = models.TextField(blank=True, null=True, verbose_name='AdresJop')
     city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='İl', db_column='city', null=True, blank=True)
